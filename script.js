@@ -1,47 +1,118 @@
-document.addEventListener("DOMContentLoaded", function() {
+// ================================
+// Bx-Jeunes Impact — script consolidé
+// ================================
 
-  /* MENU MOBILE */
-  const toggleBtn = document.querySelector(".menu-toggle");
-  const navMenu = document.querySelector("nav ul");
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  toggleBtn.addEventListener("click", function() {
-    navMenu.classList.toggle("show");
-  });
+/* ---------- Bouton "Retour en haut" ---------- */
+(() => {
+  const backToTop = document.getElementById('backToTop');
+  if (!backToTop) return;
 
-  /* BOUTON "REMONTÉE EN HAUT" */
-  const backToTop = document.getElementById("backToTop");
+  const toggleBackToTop = () => {
+    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+  };
+  toggleBackToTop();
+  window.addEventListener('scroll', toggleBackToTop, { passive: true });
 
-  window.addEventListener("scroll", function() {
-    if (window.scrollY > 300) backToTop.style.display = "block";
-    else backToTop.style.display = "none";
-  });
-
-  backToTop.addEventListener("click", function() {
-    window.scrollTo({ top:0, behavior:"smooth" });
-  });
-
-  /* SLIDER POUR ACTUALITÉS */
-  const newsCards = document.querySelectorAll("#news .card");
-  let currentIndex = 0;
-
-  if(newsCards.length > 0){
-    function showNewsCard(index){
-      newsCards.forEach((card,i) => card.style.display = i===index ? "block":"none");
+  backToTop.addEventListener('click', () => {
+    // Fallback si comportement lisse non supporté ou préférence motion réduite
+    if ('scrollBehavior' in document.documentElement.style && !prefersReduced) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo(0, 0);
     }
-    showNewsCard(currentIndex);
-    setInterval(() => { currentIndex=(currentIndex+1)%newsCards.length; showNewsCard(currentIndex); },3000);
-  }
-
-  /* ANIMATION AU SCROLL */
-  const sections = document.querySelectorAll(".section, .hero");
-  window.addEventListener("scroll", () => {
-    sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      if(rect.top < window.innerHeight - 100){
-        section.style.opacity = 1;
-        section.style.transform = "translateY(0)";
-      }
-    });
   });
 
-});
+  backToTop.setAttribute('aria-label', 'Remonter en haut');
+})();
+
+/* ---------- Menu mobile ---------- */
+(() => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('nav ul');
+  if (!menuToggle || !navMenu) return;
+
+  // ARIA / cible contrôlée
+  if (!navMenu.id) navMenu.id = 'mainmenu';
+  menuToggle.setAttribute('aria-controls', navMenu.id);
+  menuToggle.setAttribute('aria-expanded', 'false');
+
+  const openClass = 'show';
+
+  const setExpanded = (isOpen) => {
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    if (isOpen) navMenu.classList.add(openClass);
+    else navMenu.classList.remove(openClass);
+  };
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = !navMenu.classList.contains(openClass);
+    setExpanded(isOpen);
+  });
+
+  // Fermer au clic sur un lien du menu
+  navMenu.addEventListener('click', (e) => {
+    if (e.target.matches('a') && navMenu.classList.contains(openClass)) {
+      setExpanded(false);
+    }
+  });
+
+  // Fermer au clic en dehors
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains(openClass)) {
+      setExpanded(false);
+    }
+  }, { passive: true });
+
+  // Fermer avec Échap
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains(openClass)) {
+      setExpanded(false);
+      menuToggle.focus();
+    }
+  });
+})();
+
+/* ---------- Carrousel Actualités ---------- */
+(() => {
+  const slides = document.querySelectorAll('.slide');
+  if (!slides.length) return;
+
+  let index = 0;
+  let timer = null;
+
+  const setActive = (i) => {
+    slides.forEach((s) => s.classList.remove('active'));
+    if (slides[i]) slides[i].classList.add('active');
+  };
+
+  const nextSlide = () => {
+    setActive(index);
+    index = (index + 1) % slides.length;
+  };
+
+  // État initial (même si prefers-reduced-motion)
+  setActive(0);
+
+  // Lecture auto seulement si animations autorisées
+  if (!prefersReduced) {
+    const start = () => { if (!timer) timer = setInterval(nextSlide, 3000); };
+    const stop  = () => { if (timer) { clearInterval(timer); timer = null; } };
+
+    start();
+
+    // Pause au survol du carrousel
+    const carousel = document.querySelector('.news .carousel') || document.querySelector('.carousel');
+    if (carousel) {
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+    }
+
+    // Pause quand l’onglet est masqué (économie CPU/batterie)
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop();
+      else start();
+    });
+  }
+})();

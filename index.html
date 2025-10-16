@@ -3,103 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bx-Jeune Impact - Accueil</title>
+  <title>Bx-Jeunes Impact | Connecter, Inspirer, Impacter</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <!-- Description SEO -->
+  <meta name="description" content="Bx-Jeunes Impact est une initiative jeunesse qui vise à connecter, inspirer et impacter positivement la société à travers des projets solidaires, créatifs et innovants.">
+
+  <!-- Mots-clés -->
+  <meta name="keywords" content="Bx-Jeunes Impact, jeunesse, solidarité, Bruxelles, asbl, innovation, créativité, bénévolat, formation, projet social, jeunes, engagement">
+
+  <!-- Auteur -->
+  <meta name="author" content="Bx-Jeunes Impact">
 
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="icon" href="images/Logo_BX_Jeunes.png" type="image/png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bx-Jeunes Impact | Connecter, Inspirer, Impacter">
+  <meta property="og:description" content="Une initiative jeunesse qui encourage la solidarité, la créativité et l'engagement des jeunes pour un monde meilleur.">
+  <meta property="og:image" content="https://www.ton-domaine.com/images/Logo_BX_Jeunes.png">
+  <meta property="og:url" content="https://www.ton-domaine.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bx-Jeunes Impact">
+  <meta name="twitter:description" content="Connecter, Inspirer, Impacter — ensemble pour la jeunesse et la solidarité.">
+  <meta name="twitter:image" content="https://www.ton-domaine.com/images/Logo_BX_Jeunes.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
   <!-- En-tête -->
   <header>
-    <img src="images/Logo_BX_Jeunes.png" alt="Logo Bx-Jeune Impact" width="80" height="80">
-    <div class="logo">Bx-Jeunes-Impact</div>
-    <button class="menu-toggle">☰ Menu</button>
-    <nav>
-      <ul>
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#about">Qui sommes-nous ?</a></li>
-        <li><a href="#actions">Nos actions</a></li>
-        <li><a href="#opportunites">Opportunités</a></li>
-        <li><a href="#news">Actualités</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header-container">
+      <div class="logo-group">
+        <img src="images/Logo_BX_Jeunes.png" alt="Logo Bx-Jeunes Impact" class="logo-img">
+        <div class="logo">Bx-Jeunes Impact</div>
+      </div>
+      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <nav aria-label="Navigation principale">
+        <ul id="mainmenu">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="#actions">Nos actions</a></li>
+          <li><a href="#groupes">Groupes</a></li>
+          <li><a href="#news">Actualités</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Section Accueil -->
-  <section id="accueil" class="hero section">
+  <!-- Accueil -->
+  <section class="hero" id="accueil">
     <h1>Connecter, Inspirer, Impacter</h1>
     <p>Un projet pour la rencontre, la compassion et l’action.</p>
-    <a href="#about" class="btn">Découvrir nos actions</a>
+    <a href="#actions" class="btn">Découvrir nos actions</a>
   </section>
 
-  <!-- Section Qui sommes-nous -->
-  <section id="about" class="section">
+  <!-- À propos -->
+  <section class="about" id="about">
     <h2>Qui sommes-nous ?</h2>
-    <p>Nous sommes une initiative portée par des jeunes pour des jeunes, afin de créer un impact positif dans la société à travers l’éducation, la solidarité et l’innovation.</p>
+    <p>Nous sommes une initiative jeunesse visant à connecter, inspirer et impacter positivement nos communautés grâce à des projets concrets.</p>
   </section>
 
-  <!-- Section Nos actions -->
-  <section id="actions" class="section">
+  <!-- Actions -->
+  <section class="actions" id="actions">
     <h2>Nos actions</h2>
+    <p>Découvrez nos initiatives pour la jeunesse : engagement solidaire, formations et rencontres pour impacter positivement la société.</p>
     <div class="cards">
       <div class="card">🌍 Projets solidaires</div>
       <div class="card">📚 Formations</div>
-      <div class="card">🎉 Événements</div>
+      <div class="card">🤝 Rencontres</div>
     </div>
   </section>
 
-  <!-- Section Opportunités -->
-  <section id="opportunites" class="section">
-    <h2>Opportunités</h2>
-    <p>Stages, programmes de mentorat et formations pour les jeunes motivés.</p>
-  </section>
+  <!-- Groupes -->
+  <section class="groupes" id="groupes">
+    <h2>Les groupes des Jeunes Impacts</h2>
+    <p>Nos groupes rassemblent des jeunes motivés dans différents domaines d’action pour partager, apprendre et impacter positivement leur environnement.</p>
 
-  <!-- Section Actualités -->
-  <section id="news" class="section">
-    <h2>Actualités</h2>
     <div class="cards">
-      <div class="card">📢 Lancement du projet 2025</div>
-      <div class="card">🤝 Partenariat Nord-Sud</div>
-      <div class="card">🚀 Nouveaux ateliers en ligne</div>
+      <a href="groupe-creatif.html" class="card">
+        <h3>🎨 Groupe Créatif</h3>
+        <p>Art, design, photo et vidéo : création de contenus inspirants.</p>
+      </a>
+      <a href="groupe-solidaire.html" class="card">
+        <h3>🌍 Groupe Solidaire</h3>
+        <p>Projets d’entraide, de sensibilisation et de bénévolat local.</p>
+      </a>
+      <a href="groupe-innovation.html" class="card">
+        <h3>💡 Groupe Innovation</h3>
+        <p>Initiatives numériques, technologiques et entrepreneuriales.</p>
+      </a>
+      <a href="groupe-communication.html" class="card">
+        <h3>🎤 Groupe Communication</h3>
+        <p>Promotion, réseaux sociaux et diffusion des actions Impact.</p>
+      </a>
     </div>
   </section>
 
-  <!-- Section Contact -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
+  <!-- Actualités -->
+  <section class="news" id="news">
+    <h2>Actualités</h2>
+    <p>Retrouvez toutes les actualités marquantes de notre projet : lancements, formations et événements solidaires !</p>
+    <img src="images/Design sans titre-2.png" alt="Photo actualités" loading="lazy" style="width:220px;margin-bottom:60px;">
+    <div class="carousel" aria-live="polite">
+      <div class="slide active">📢 Lancement officiel du projet Bx-Jeunes Impact !</div>
+      <div class="slide">🎓 Nouvelle formation « Jeunes Leaders 2025 »</div>
+      <div class="slide">🌍 Journée d’action solidaire à Bruxelles</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Contactez-nous</h2>
     <form>
-      <input type="text" name="name" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre email" required>
-      <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+      <input type="text" placeholder="Votre nom" required>
+      <input type="email" placeholder="Votre email" required>
+      <textarea placeholder="Votre message" required></textarea>
       <button type="submit" class="btn">Envoyer</button>
     </form>
   </section>
 
   <!-- Pied de page -->
   <footer>
-    <p>&copy; 2025 Bx-Jeune Impact | Tous droits réservés</p>
+    <p>© 2025 Bx-Jeunes Impact |
+      <a href="mentions-legales.html">Mentions légales</a> |
+      <a href="confidentialite.html">Politique de confidentialité</a>
+    </p>
     <p>Suivez-nous :
       <a href="#">Instagram</a> |
       <a href="#">Facebook</a> |
-      <a href="#">Email</a>
+      <a href="mailto:contact@bx-jeunes-impact.org">Email</a>
     </p>
   </footer>
 
-  <!-- Bouton retour en haut -->
-  <button id="backToTop">↑ Haut</button>
-
-  <!-- Script -->
+  <button id="backToTop" aria-label="Remonter en haut">↑</button>
   <script src="script.js"></script>
 </body>
 </html>
-
-
-

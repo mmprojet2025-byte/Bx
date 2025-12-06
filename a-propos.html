@@ -1,54 +1,35 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À propos | Bx-Jeunes Impact</title>
 
-  <!-- Description SEO -->
   <meta name="description" content="Découvrez la mission, les valeurs et l’équipe de Bx-Jeunes Impact : une initiative jeunesse pour connecter, inspirer et impacter positivement la société.">
-
-  <!-- Mots-clés -->
-  <meta name="keywords" content="Bx-Jeunes Impact, jeunesse, asbl, Bruxelles, solidarité, engagement, créativité, innovation, valeurs, mission">
-
-  <!-- Auteur -->
   <meta name="author" content="Bx-Jeunes Impact">
 
-  <!-- Favicon -->
   <link rel="icon" href="images/Logo_BX_Jeunes.png" type="image/png">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="À propos | Bx-Jeunes Impact">
-  <meta property="og:description" content="Apprenez à connaître la mission, l’équipe et les valeurs qui guident le mouvement Bx-Jeunes Impact.">
-  <meta property="og:image" content="https://ton-domaine.com/images/Logo_BX_Jeunes.png">
-  <meta property="og:url" content="https://ton-domaine.com/a-propos.html">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="À propos | Bx-Jeunes Impact">
-  <meta name="twitter:description" content="Notre mission : connecter, inspirer et impacter positivement la jeunesse.">
-  <meta name="twitter:image" content="https://ton-domaine.com/images/Logo_BX_Jeunes.png">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header>
   <div class="header-container">
-    <img src="images/Logo_BX_Jeunes.png" alt="Logo Bx-Jeunes Impact" class="logo-img">
-    <div class="logo">Bx-Jeunes Impact</div>
+    <div class="logo-group">
+      <img src="images/Logo_BX_Jeunes.png" alt="Logo Bx-Jeunes Impact" class="logo-img">
+      <div class="logo">Bx-Jeunes Impact</div>
+    </div>
     <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-    <nav>
+    <nav aria-label="Navigation principale">
       <ul id="mainmenu">
         <li><a href="index.html#accueil">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="index.html#actions">Actions</a></li>
         <li><a href="index.html#groupes">Groupes</a></li>
+        <li><a href="index.html#news">Actualités</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -57,7 +38,7 @@
 
 <section class="about">
   <h1>À propos de Bx-Jeunes Impact</h1>
-  <p><strong>Bx-Jeunes Impact</strong> réunit des jeunes motivés pour <em>connecter, inspirer et impacter</em> la société à travers des projets solidaires, créatifs et innovants.</p>
+  <p><strong>Bx-Jeunes Impact</strong> réunit des jeunes motivés pour connecter, inspirer et impacter la société à travers des projets solidaires, créatifs et innovants.</p>
 
   <h2>Notre mission</h2>
   <p>Offrir un espace de collaboration, de formation et d’expression afin de renforcer l’engagement citoyen et l’autonomie des jeunes.</p>
@@ -72,15 +53,26 @@
   <h2>Notre équipe</h2>
   <p>Jeunes bénévoles, formateurs et partenaires œuvrent ensemble pour faire vivre les valeurs de Bx-Jeunes Impact.</p>
 
-  <h2>Partenaires & soutiens</h2>
+  <h2>Partenaires et soutiens</h2>
   <p>Associations, écoles, institutions et entreprises locales contribuent à la réussite de nos actions.</p>
 </section>
 
 <footer>
-  <p>© 2025 Bx-Jeunes Impact | <a href="mentions-legales.html">Mentions légales</a> | <a href="confidentialite.html">Politique de confidentialité</a></p>
+  <p>© 2025 Bx-Jeunes Impact |
+    <a href="mentions-legales.html">Mentions légales</a> |
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </p>
+  <p>Suivez-nous :
+    <a href="#">Instagram</a> |
+    <a href="#">Facebook</a> |
+    <a href="mailto:contact@bx-jeunes-impact.org">Email</a>
+  </p>
 </footer>
 
 <button id="backToTop" aria-label="Remonter en haut">↑</button>
+
 <script src="script.js"></script>
+
 </body>
 </html>
+

@@ -123,28 +123,35 @@
   </section>
 
   <!-- Contact -->
-  <section class="contact" id="contact">
-    <h2>Contactez-nous</h2>
-    <form>
-      <input type="text" placeholder="Votre nom" required>
-      <input type="email" placeholder="Votre email" required>
-      <textarea placeholder="Votre message" required></textarea>
-      <button type="submit" class="btn">Envoyer</button>
-    </form>
-  </section>
+ <section class="contact" id="contact">
+  <h2>Contactez-nous</h2>
+
+  <form action="https://formspree.io/f/mldqladn" method="POST">
+    <input type="text" name="nom" placeholder="Votre nom" required>
+    <input type="email" name="email" placeholder="Votre email" required>
+    <textarea name="message" placeholder="Votre message" required></textarea>
+
+    <button type="submit" class="btn">Envoyer</button>
+  </form>
+</section>
+
 
   <!-- Pied de page -->
-  <footer>
-    <p>© 2025 Bx-Jeunes Impact |
-      <a href="mentions-legales.html">Mentions légales</a> |
-      <a href="confidentialite.html">Politique de confidentialité</a>
-    </p>
-    <p>Suivez-nous :
-      <a href="#">Instagram</a> |
-      <a href="#">Facebook</a> |
-      <a href="mailto:contact@bx-jeunes-impact.org">Email</a>
-    </p>
-  </footer>
+<footer>
+  <p>© 2025 Bx-Jeunes Impact |
+    <a href="mentions-legales.html">Mentions légales</a> |
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </p>
+
+  <p>Suivez-nous :
+    <a href="https://www.instagram.com/bxjeunesimpact/" target="_blank" rel="noopener">Instagram</a> |
+    <a href="https://www.facebook.com/Bxjeunesimpact" target="_blank" rel="noopener">Facebook</a> |
+    <a href="https://www.youtube.com/@BxJeunesImpact" target="_blank" rel="noopener">YouTube</a>
+  </p>
+</footer>
+
+
+
 
   <button id="backToTop" aria-label="Remonter en haut">↑</button>
   <script src="script.js"></script>
